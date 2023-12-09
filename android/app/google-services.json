@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "697992473958",
+    "project_id": "telemed-19ed7",
+    "storage_bucket": "telemed-19ed7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697992473958:android:c492e68e0bc17595aeeca7",
+        "android_client_info": {
+          "package_name": "com.example.telemed"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACdxQnv0XzsRMg44HGyaeIobVtXc1kj8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
