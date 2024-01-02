@@ -4,7 +4,7 @@ import 'pages/home.dart';
 import 'package:telemed/authentication/ui/Screens/Welcome/welcome_screen.dart';
 import 'package:telemed/authentication/ui/constants.dart';
 
-void main() {
+void main() async {
   runApp(MyApp());
 }
 

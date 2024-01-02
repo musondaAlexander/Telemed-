@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../../../../../pages/home.dart';
 import '../../../components/already_have_an_account_acheck.dart';
 import '../../../constants.dart';
 import '../../Login/login_screen.dart';
@@ -44,7 +47,17 @@ class SignUpForm extends StatelessWidget {
           ),
           const SizedBox(height: defaultPadding / 2),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const LoginScreen();
+                  },
+                ),
+              );
+              //Get.to(() => const Home());
+            },
             child: Text("Sign Up".toUpperCase()),
           ),
           const SizedBox(height: defaultPadding),
