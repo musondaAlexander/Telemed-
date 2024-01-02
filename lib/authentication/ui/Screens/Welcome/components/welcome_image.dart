@@ -13,8 +13,11 @@ class WelcomeImage extends StatelessWidget {
     return Column(
       children: [
         const Text(
-          "WELCOME TO EDU",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          "WELCOME TO TELEMED",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
         ),
         const SizedBox(height: defaultPadding * 2),
         Row(
@@ -23,7 +26,7 @@ class WelcomeImage extends StatelessWidget {
             Expanded(
               flex: 8,
               child: SvgPicture.asset(
-                "assets/icons/chat.svg",
+                "assets/icons/Doctor-rafiki.svg",
               ),
             ),
             const Spacer(),

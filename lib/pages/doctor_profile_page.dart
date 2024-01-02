@@ -147,9 +147,9 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               DoctorInfoBox(
-                value: "500+",
-                info: "Successful Patients",
-                icon: Icons.groups_rounded,
+                value: "Chingola",
+                info: "12 President Avenue",
+                icon: Icons.location_on_rounded,
                 color: Colors.green,
               ),
               DoctorInfoBox(

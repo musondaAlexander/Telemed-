@@ -39,7 +39,7 @@ class MyButton extends StatelessWidget {
                   color: Theme.of(context).shadowColor.withOpacity(0.1),
                   spreadRadius: 2,
                   blurRadius: 3,
-                  offset: Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 3), // changes position of shadow
                 ),
               ],
             ),
@@ -50,7 +50,7 @@ class MyButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: isLoading
                     ? [
-                        SizedBox(
+                        const SizedBox(
                             width: 20,
                             height: 20,
                             child: CircularProgressIndicator(
@@ -77,7 +77,7 @@ class MyButton extends StatelessWidget {
                                   ? Colors.white.withOpacity(0.3)
                                   : Colors.white,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Text(

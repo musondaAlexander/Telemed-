@@ -1,6 +1,4 @@
-import 'theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'pages/home.dart';
 import 'package:telemed/authentication/ui/Screens/Welcome/welcome_screen.dart';
 import 'package:telemed/authentication/ui/constants.dart';
 
