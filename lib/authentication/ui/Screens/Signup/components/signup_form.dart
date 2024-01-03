@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:telemed/controllers/authtentication/auth_controller.dart';
 import '../../../components/already_have_an_account_acheck.dart';
 import '../../../constants.dart';
 import '../../Login/login_screen.dart';
 
 class SignUpForm extends StatelessWidget {
-  const SignUpForm({
+  final controller = Get.put(AuthController());
+  SignUpForm({
     Key? key,
   }) : super(key: key);
 
@@ -14,6 +17,7 @@ class SignUpForm extends StatelessWidget {
       child: Column(
         children: [
           TextFormField(
+            controller: controller.email,
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
             cursorColor: kPrimaryColor,
@@ -29,6 +33,7 @@ class SignUpForm extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: defaultPadding),
             child: TextFormField(
+              controller: controller.password,
               textInputAction: TextInputAction.done,
               obscureText: true,
               cursorColor: kPrimaryColor,
@@ -44,6 +49,10 @@ class SignUpForm extends StatelessWidget {
           const SizedBox(height: defaultPadding / 2),
           ElevatedButton(
             onPressed: () {
+              AuthController.instance.signUp(
+                controller.email.text.trim(),
+                controller.password.text.trim(),
+              );
               Navigator.push(
                 context,
                 MaterialPageRoute(

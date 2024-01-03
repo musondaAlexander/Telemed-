@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:telemed/authentication/ui/Screens/Welcome/welcome_screen.dart';
 import 'package:telemed/authentication/ui/constants.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:telemed/controllers/authtentication/auth_controller.dart';
+import 'package:telemed/firebase_options.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // Required by FlutterConfig
+  // // await FlutterConfig.loadEnvVariables();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // ).then((value) => Get.put(AuthController()));
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Telemed',
         theme: ThemeData(

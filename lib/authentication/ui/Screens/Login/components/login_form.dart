@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../../../pages/home.dart';
+import 'package:telemed/controllers/authtentication/auth_controller.dart';
 import '../../../components/already_have_an_account_acheck.dart';
 import '../../../constants.dart';
 import '../../Signup/signup_screen.dart';
 
 class LoginForm extends StatelessWidget {
-  const LoginForm({
+  final controller = Get.put(AuthController());
+  LoginForm({
     Key? key,
   }) : super(key: key);
 
@@ -17,6 +17,7 @@ class LoginForm extends StatelessWidget {
       child: Column(
         children: [
           TextFormField(
+            controller: controller.emailController,
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
             cursorColor: kPrimaryColor,
@@ -32,6 +33,7 @@ class LoginForm extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: defaultPadding),
             child: TextFormField(
+              controller: controller.passwordController,
               textInputAction: TextInputAction.done,
               obscureText: true,
               cursorColor: kPrimaryColor,
@@ -47,15 +49,19 @@ class LoginForm extends StatelessWidget {
           const SizedBox(height: defaultPadding),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const Home();
-                  },
-                ),
+              AuthController.instance.login(
+                controller.emailController.text.trim(),
+                controller.passwordController.text.trim(),
               );
-              //Get.to(() => const Home());
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) {
+              //       return const Home();
+              //     },
+              //   ),
+              // );
+              // //Get.to(() => const Home());
             },
             child: Text(
               "Login".toUpperCase(),

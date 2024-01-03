@@ -47,28 +47,28 @@ class _HomeState extends State<Home> {
           BottomNavyBarItem(
               activeColor: primary,
               inactiveColor: Colors.black,
-              title: Text('Home'),
-              icon: Icon(Icons.home)),
+              title: const Text('Home'),
+              icon: const Icon(Icons.home)),
           BottomNavyBarItem(
               activeColor: primary,
               inactiveColor: Colors.black,
-              title: Text('Doctor'),
-              icon: Icon(Icons.medical_services_rounded)),
+              title: const Text('Doctor'),
+              icon: const Icon(Icons.medical_services_rounded)),
           BottomNavyBarItem(
               activeColor: primary,
               inactiveColor: Colors.black,
-              title: Text('Chat'),
-              icon: Icon(CupertinoIcons.chat_bubble_2_fill)),
+              title: const Text('Chat'),
+              icon: const Icon(CupertinoIcons.chat_bubble_2_fill)),
           BottomNavyBarItem(
               activeColor: primary,
               inactiveColor: Colors.black,
-              title: Text('Booking'),
-              icon: Icon(Icons.event_note_rounded)),
+              title: const Text('Booking'),
+              icon: const Icon(Icons.event_note_rounded)),
           BottomNavyBarItem(
               activeColor: primary,
               inactiveColor: Colors.black,
-              title: Text('Account'),
-              icon: Icon(Icons.manage_accounts_rounded)),
+              title: const Text('Account'),
+              icon: const Icon(Icons.manage_accounts_rounded)),
         ],
       ),
     );
