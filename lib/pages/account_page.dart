@@ -1,7 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:telemed/controllers/authtentication/auth_controller.dart';
+import 'package:telemed/widgets/custom_divider.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -70,26 +70,49 @@ class _AccountPageState extends State<AccountPage> {
             ),
             const SizedBox(height: 20),
             Container(
+              margin: const EdgeInsets.only(right: 15),
+              padding:
+                  const EdgeInsets.only(top: 5, bottom: 5, left: 30, right: 30),
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3),
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 1,
+                    blurRadius: 1,
+                    offset: const Offset(1, 1), // changes position of shadow
                   ),
                 ],
-                borderRadius: BorderRadius.circular(10),
               ),
               child: Column(children: [
-                _buildListTile(Icons.notifications, "Notifications"),
+                _buildListTile(Icons.edit_notifications, "Notifications"),
+                const CustomDivider(),
                 _buildListTile(Icons.book, "Booking"),
+                const CustomDivider(),
                 _buildListTile(Icons.lock, "Privacy and Security"),
+                const CustomDivider(),
                 _buildListTile(Icons.dark_mode, "Appearance"),
               ]),
             ),
             const SizedBox(height: 20),
-            _buildListTile(Icons.logout_rounded, "Log Out"),
+            Container(
+                margin: const EdgeInsets.only(right: 15),
+                padding: const EdgeInsets.only(
+                    top: 5, bottom: 5, left: 30, right: 30),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.3),
+                      spreadRadius: 1,
+                      blurRadius: 1,
+                      offset: const Offset(1, 1), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: _buildListTile(Icons.logout_rounded, "Log Out")),
           ],
         ),
       ),
