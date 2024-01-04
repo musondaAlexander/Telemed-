@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:telemed/authentication/ui/Screens/Welcome/welcome_screen.dart';
 import 'package:telemed/authentication/ui/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:telemed/controllers/authtentication/auth_controller.dart';
 import 'package:telemed/firebase_options.dart';
 
 void main() async {

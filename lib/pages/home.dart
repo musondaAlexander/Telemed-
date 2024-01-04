@@ -1,5 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:telemed/pages/account_page.dart';
+import 'package:telemed/pages/booking_page.dart';
 import 'package:telemed/pages/chat_page.dart';
 import 'package:telemed/theme/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -20,7 +21,7 @@ class _HomeState extends State<Home> {
     HomePage(),
     DoctorPage(),
     ChatPage(),
-    Container(),
+    BookingPage(),
     AccountPage()
   ];
 
