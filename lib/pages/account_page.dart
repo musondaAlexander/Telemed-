@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:telemed/controllers/authtentication/auth_controller.dart';
+import 'package:telemed/data/json.dart';
+import 'package:telemed/widgets/avatar_image.dart';
 import 'package:telemed/widgets/custom_divider.dart';
 
 class AccountPage extends StatefulWidget {
@@ -35,20 +37,17 @@ class _AccountPageState extends State<AccountPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
+            Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CircleAvatar(
-                    // Add your avatar image or initials here
-                    radius: 40,
-                  ),
-                  Column(
+                  AvatarImage(chatsData[0]["image"].toString()),
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Center(
                         child: Text(
-                          "Your Name",
+                          "Alexander",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -57,7 +56,7 @@ class _AccountPageState extends State<AccountPage> {
                       ),
                       Center(
                         child: Text(
-                          "your.email@example.com",
+                          "alexander@example.com",
                           style: TextStyle(
                             fontSize: 16,
                           ),
@@ -86,13 +85,26 @@ class _AccountPageState extends State<AccountPage> {
                 ],
               ),
               child: Column(children: [
-                _buildListTile(Icons.edit_notifications, "Notifications"),
+                // pass right orange as color
+                _buildListTile(
+                  Icons.notifications,
+                  "Notifications",
+                  const Color.fromARGB(255, 241, 162, 83),
+                  const Color.fromARGB(255, 241, 162, 83),
+                ),
                 const CustomDivider(),
-                _buildListTile(Icons.book, "Booking"),
+                _buildListTile(Icons.book, "Booking", Colors.lightGreen,
+                    Colors.lightGreen),
                 const CustomDivider(),
-                _buildListTile(Icons.lock, "Privacy and Security"),
+                _buildListTile(
+                  Icons.lock,
+                  "Privacy and Security",
+                  Colors.redAccent,
+                  Colors.redAccent,
+                ),
                 const CustomDivider(),
-                _buildListTile(Icons.dark_mode, "Appearance"),
+                _buildListTile(Icons.dark_mode, "Appearance", Colors.lightBlue,
+                    Colors.lightBlue),
               ]),
             ),
             const SizedBox(height: 20),
@@ -112,16 +124,37 @@ class _AccountPageState extends State<AccountPage> {
                     ),
                   ],
                 ),
-                child: _buildListTile(Icons.logout_rounded, "Log Out")),
+                child: _buildListTile(
+                    Icons.logout_rounded, "Log Out", Colors.grey, Colors.grey)),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildListTile(IconData leadingIcon, String title) {
+  Widget _buildListTile(
+    IconData leadingIcon,
+    String title,
+    Color iconColor,
+    Color backgroundColor,
+  ) {
     return ListTile(
-      leading: Icon(leadingIcon),
+      contentPadding:
+          const EdgeInsets.all(0), // Remove default ListTile padding
+      leading: Container(
+        width: 40,
+        height: 40,
+        decoration: BoxDecoration(
+          color: backgroundColor.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Center(
+          child: Icon(
+            leadingIcon,
+            color: iconColor,
+          ),
+        ),
+      ),
       title: Text(title),
       trailing: const Icon(Icons.keyboard_arrow_right),
       onTap: () {
