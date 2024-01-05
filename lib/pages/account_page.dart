@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:telemed/controllers/authtentication/auth_controller.dart';
 import 'package:telemed/data/json.dart';
+import 'package:telemed/pages/booking_page.dart';
 import 'package:telemed/widgets/avatar_image.dart';
 import 'package:telemed/widgets/custom_divider.dart';
 
@@ -164,6 +165,7 @@ class _AccountPageState extends State<AccountPage> {
         } else if (title == "Notifications") {
           debugPrint("notifications");
         } else if (title == "Booking") {
+          Get.to(() => const BookingPage());
           debugPrint("Bookin");
         } else if (title == "Privacy and Security") {
           debugPrint("Privacy and Security");
